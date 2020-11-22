@@ -1,0 +1,1670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.1" />
+<title>euler13 API documentation</title>
+<meta name="description" content="Second assignment of DAALG - J.R. Dorronsoro …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>euler13</code></h1>
+</header>
+<section id="section-intro">
+<p>Second assignment of DAALG - J.R. Dorronsoro</p>
+<h2 id="authors">Authors</h2>
+<p>Javier A. Lougedo Lorente
+Julia Bermejo Álvarez</p>
+<p>In this assignment we will implement the basic methods for euler paths,
+as well as methods to generate sequences and spectrums, and to store and
+load graphs from a file in TGF format.</p>
+<p>This is a model to be used on a main, so there are no execution examples.</p>
+<p>Additional information:
+Notebook: <a href="https://colab.research.google.com/drive/1NRXrcn56PHzSBCm7MwBWsXdqtI4hSdr4?usp=sharing">https://colab.research.google.com/drive/1NRXrcn56PHzSBCm7MwBWsXdqtI4hSdr4?usp=sharing</a>
+LaTeX project: <a href="https://www.overleaf.com/read/bkpfmrqxhysc">https://www.overleaf.com/read/bkpfmrqxhysc</a></p>
+<p>This code was made by Javier Lougedo and Julia Bermejo</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34; Second assignment of DAALG - J.R. Dorronsoro
+
+Authors:
+    Javier A. Lougedo Lorente
+    Julia Bermejo Álvarez
+
+In this assignment we will implement the basic methods for euler paths,
+as well as methods to generate sequences and spectrums, and to store and
+load graphs from a file in TGF format.
+
+This is a model to be used on a main, so there are no execution examples.
+
+Additional information:
+    Notebook: https://colab.research.google.com/drive/1NRXrcn56PHzSBCm7MwBWsXdqtI4hSdr4?usp=sharing
+    LaTeX project: https://www.overleaf.com/read/bkpfmrqxhysc
+
+This code was made by Javier Lougedo and Julia Bermejo
+&#34;&#34;&#34;
+
+import numpy as np
+import time
+import os
+import copy
+
+from grafos13 import floyd_warshall_accelerated, dg_2_ma
+
+
+# GRAPH STORING AND LOADING RELATED METHODS
+def d_g_2_TGF(d_g, f_name):
+    &#34;&#34;&#34; Stores the given d_g multigraph in a file with name f_name in the
+        directory &#34;.graphs&#34; with extension &#34;.tgf&#34;, in TGF format
+
+    Args:
+        d_g: multigraph to store
+        f_name: filename for the graph to be stored
+
+    Returns:
+        path: global path to generated file
+    &#34;&#34;&#34;
+    # Create the directory
+    try:
+        os.mkdir(&#34;./.graphs&#34;)
+    except:
+        # Unless it already exists
+        pass
+    # Open the new file, deleting if already existing
+    f = open(&#34;./.graphs/{}.tgf&#34;.format(f_name), &#34;w&#34;)
+    # Append all the nodes
+    f.writelines(&#34;{}\n&#34;.format(node) for node in d_g.keys())
+    # Put the separator between nodes and edges
+    f.write(&#34;#&#34; * 80 + &#34;\n&#34;)  # We use a whole so its visually visible
+    # We now add all the edges
+    for origin in d_g.keys():
+        for target in d_g[origin].keys():
+            for weight in d_g[origin][target].values():
+                f.write(&#34;{} {} {}\n&#34;.format(origin, target, weight))
+    f.close()
+    return os.path.abspath(&#34;./.graphs/&#34; + f_name + &#34;.tgf&#34;)
+
+
+def TGF_2_d_g(f_name):
+    &#34;&#34;&#34; Loads the information of a TGF file of .graphs folder into a multigraph
+
+    Args:
+        f_name: name of the file to load on folder .graphs (without &#34;.tgf&#34;)
+
+    Returns:
+        d_g: multigraph of the given TGF file, None if doesnt exist
+    &#34;&#34;&#34;
+    # Check if multigraph file exists
+    if os.path.exists(&#34;./.graphs/&#34; + f_name + &#34;.tgf&#34;) is False:
+        print(&#34;The given multigraph doesn&#39;t exist in the .graph directory&#34;)
+        return None
+
+    # We create the dictionary and open the file
+    f = open(&#34;./.graphs/{}.tgf&#34;.format(f_name), &#34;r&#34;)
+    d_g = dict()
+
+    # We add all the nodes to it, till #
+    for line in f:
+        if &#34;#&#34; in line:
+            break
+        node = int(line.strip(&#34;\n&#34;))
+        d_g[node] = dict()
+
+    # We now add all the edges
+    for line in f:
+        origin, target, weight = list(map(int, line.strip(&#34;\n&#34;).split(&#34; &#34;)))
+        if d_g[origin].get(target) is None:
+            d_g[origin][target] = dict()
+        d_g[origin][target][len(d_g[origin][target])] = weight
+
+    # We now close and return the file
+    f.close()
+    return d_g
+
+
+# EULER RELATED METHODS
+def adj_inc_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Obtains the adjacency and incidence lists from a directed multigraph
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        adj: adjacency list
+        inc: incidence list
+        NOTE: the lists returned are in the form of NP arrays
+    &#34;&#34;&#34;
+    # We create the 2 arrays we will be using
+    adj, inc = np.zeros(shape=len(d_mg), dtype=&#34;int16&#34;), np.zeros(
+        shape=len(d_mg), dtype=&#34;int16&#34;)
+
+    # We loop and add all of the adjacencies and incidences
+    for origin in d_mg.keys():
+        for target in d_mg[origin].keys():
+            for _ in d_mg[origin][target].keys():
+                adj[origin] += 1
+                inc[target] += 1
+
+    # And finally return the arrays
+    return adj, inc
+
+
+def isthere_euler_path_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Check if the directed multigraph has an euler path
+
+    By Wikipedia:
+        &#34;A directed graph has an Eulerian trail if and only if at most one vertex has 
+        (out-degree) − (in-degree) = 1, at most one vertex has (in-degree) − (out-degree) = 1, 
+        every other vertex has equal in-degree and out-degree, and all of its vertices with 
+        nonzero degree belong to a single connected component of the underlying undirected graph.&#34;
+
+    We will then check the out-degrees and in-degrees and then check with an implementation of
+    DFS if all of them belong to the same connected path
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        True: if it has an euler path
+        False: if it has not an euler path
+    &#34;&#34;&#34;
+    # We first get the adjacency and incidence as numpy arrays
+    adj, inc = adj_inc_directed_multigraph(d_mg)
+
+    # (out-degree) − (in-degree) = 1 in only one vertex
+    out_minus_in = adj - inc
+    # (out-degree) − (in-degree) = 1 in only one vertex
+    in_minus_out = inc - adj
+
+    # We check if there are non-zero or non-one values inside the arrays
+    if True in (np.isin(out_minus_in, [-1, 0, 1], invert=True) +
+                np.isin(in_minus_out, [-1, 0, 1], invert=True)):
+        return False
+
+    # We get the two conditions based on adjacency and incidence
+    cond_1 = len(out_minus_in[out_minus_in == 1])
+    cond_2 = len(in_minus_out[in_minus_out == 1])
+
+    # If the adjacency and incidence are OK
+    if cond_1 &lt; 2 and cond_2 &lt; 2:
+        # If there is a node from which we can access all the other nodes,
+        # its all connected. Easiest way to get this with the methods we
+        # have right now is by using Floyd Warshall Accelerated
+        if graph_is_fully_connected(d_mg):
+            return True
+    return False
+
+
+def first_last_euler_path_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Obtains the first and last node for an euler path.
+
+    Two zeros are returned in case of an eulerian circuit
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        firtsLast: tuple with the first and last node, None if there is not a path
+    &#34;&#34;&#34;
+    firtsLast = (None, None)
+    # Check if there is a path
+    if isthere_euler_path_directed_multigraph(d_mg):
+        adj, inc = adj_inc_directed_multigraph(d_mg)
+        # We get where the first and last nodes by adjacency and incidence
+        # If there are all 0, the return is 0, so there is a loop
+        first = np.argmax((adj - inc) &gt; 0)
+        last = np.argmax((inc - adj) &gt; 0)
+        firtsLast = (first, last)
+    return tuple(firtsLast)
+
+
+def euler_walk_directed_multigraph(u, d_mg):
+    &#34;&#34;&#34; Euler walk from the starting point U
+
+    Args:
+        u: starting point for the walk
+        d_mg: directed multigraph
+
+    Returns:
+        path: possible eulerian path as list, [] if there is no path
+    &#34;&#34;&#34;
+
+    path = []
+
+    if u in d_mg.keys():
+        path.append(u)
+        while u in d_mg.keys() and len(d_mg[u]) != 0:
+            for t in d_mg[u].keys():
+                for o in d_mg[u][t].keys():
+                    path.append(t)
+                    if len(d_mg[u][t]) != 1:
+                        d_mg[u][t].pop(o)
+
+                    else:
+                        d_mg[u].pop(t)
+                    break
+                break
+            u = t
+
+    return path
+
+
+def next_first_node(l_path, d_mg):
+    &#34;&#34;&#34; Obtains the following node from which the walk must be restarted
+
+    Args:
+        l_path: path&#39;s list
+        d_mg: directed multigraph
+
+    Returns:
+        inode: initial node
+        None: when there are not more nodes
+    &#34;&#34;&#34;
+    adj, inc = adj_inc_directed_multigraph(d_mg)
+
+    aux = adj + inc
+
+    for inode in range(len(aux)):
+        if inode in l_path and aux[inode] % 2 == 0 and aux[inode] != 0:
+            return inode
+
+    return None
+
+
+def path_stitch(path_1, path_2):
+    &#34;&#34;&#34; Unify two different paths
+
+    Args:
+        path_1: first path
+        path_2: second path
+
+    Returns:
+        path: the resultant path
+    &#34;&#34;&#34;
+    path_1 = np.array(path_1)
+    path_2 = np.array(path_2)
+
+    for i in range(len(path_1)):
+        if path_1[i] == path_2[0]:
+            path_1 = np.delete(path_1, i)
+            path = np.insert(path_1, i, path_2)
+            return path.tolist()
+
+
+def euler_path_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Obtains the Eulerian path
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        path1: eulerian path
+    &#34;&#34;&#34;
+    if isthere_euler_path_directed_multigraph(d_mg) is False:
+        return None
+
+    d_mgCopy = copy.deepcopy(d_mg)
+
+    u, _ = first_last_euler_path_directed_multigraph(d_mgCopy)
+
+    path1 = euler_walk_directed_multigraph(u, d_mgCopy)
+    u = next_first_node(path1, d_mgCopy)
+
+    while u != None:
+        path2 = euler_walk_directed_multigraph(u, d_mgCopy)
+        path1 = path_stitch(path1, path2)
+        u = next_first_node(path1, d_mgCopy)
+
+    return path1
+
+
+def euler_path(d_mg):
+    &#34;&#34;&#34; Obtains an Eulerian Path with a list method, instead of recomended method
+        with submethods and using the graph structure.
+
+    Args:
+        d_mg_ the directed multigraph to find the euler path from
+
+    Returns:
+        path: an ordered list with the visited nodes, None if not euler path
+    &#34;&#34;&#34;
+    # We check if there is a possible euler path
+    if isthere_euler_path_directed_multigraph is False:
+        return None
+    # We first fetch the starting and ending nodes
+    first, end = first_last_euler_path_directed_multigraph(d_mg)
+    if first is None or end is None:
+        return None
+
+    # We create a list with edges to avoid deepcoping and to have a
+    # confortable way to loop through edges
+    edges = []
+    for origin in d_mg.keys():
+        edges.append([])
+        for target in d_mg[origin].keys():
+            for edge in d_mg[origin][target].keys():
+                edges[origin].append(target)
+
+    # Current node update and loop till we reach end node
+    current_node = first
+    path = [first]
+    while current_node != end:
+        # We check if we have reached a dead end. If so, there is no euler path
+        # (this should never happen, but if so, it means there are 2 end nodes)
+        if edges[current_node] == []:
+            print(&#34;A big error ocurred, this shouldn&#39;t happen.&#34;)
+            return None
+        # We update the current node with its first edge and add it to the path
+        current_node = edges[current_node].pop(0)
+        path.append(current_node)
+
+    # Now, if all went properly, we have our main path in path. (euler_walk)
+    # If there are no edges left, we have our euler path
+    # Else, we still may have some loops inside our path
+    while any(edges):
+        # Get the node we will be checking for inner loops (next_first_node)
+        for node in set(path):
+            if edges[node] != []:
+                current_node = edges[node].pop(0)
+                break
+        # We travel through the whole loop
+        loop_path = [current_node]
+        while current_node != node:  # (euler_walk)
+            # We check if we have reached a dead-end
+            if edges[current_node] == []:
+                return None
+            # We update the current node with its first known edge and add it to the loop_path
+            current_node = edges[current_node].pop(0)
+            loop_path.append(current_node)
+        # We then add all its new elements at the beggining of the looping node
+        insertion_index = path.index(node)
+        for node in loop_path:  # (path_stitch)
+            insertion_index += 1
+            path.insert(insertion_index, node)
+
+    return path
+
+
+def isthere_euler_circuit_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Decide if the directed multigraph has an euler circuit
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        True: if it has an euler circuit
+        False: if it has not an euler circuit
+    &#34;&#34;&#34;
+    adj, inc = adj_inc_directed_multigraph(d_mg)
+    return np.equal(adj, inc).all() and graph_is_fully_connected(d_mg)
+
+
+def euler_circuit_directed_multigraph(d_mg, u=0):
+    &#34;&#34;&#34; Obtains an eulerian circuit
+
+    Args:
+        d_mg: directed multigraph
+        u: first node
+
+    Returns:
+        path1: eulerian circuit
+    &#34;&#34;&#34;
+    d_mgCopy = copy.deepcopy(d_mg)
+
+    if isthere_euler_circuit_directed_multigraph(d_mgCopy) == True:
+
+        path1 = euler_walk_directed_multigraph(u, d_mgCopy)
+        u = next_first_node(path1, d_mgCopy)
+
+        while u != None:
+            path2 = euler_walk_directed_multigraph(u, d_mgCopy)
+            path1 = path_stitch(path1, path2)
+            u = next_first_node(path1, d_mgCopy)
+
+        return path1
+
+
+def graph_is_fully_connected(d_mg):
+    &#34;&#34;&#34; Using the accelerated Floyd Warshall Method, check if the graph
+        is fully connected and there is somehow a path to all the other
+        nodes present on the graph.
+
+    Args:
+        d_mg: the graph to check connection in
+
+    Returns:
+        bool: if the graph is fully connected or not
+    &#34;&#34;&#34;
+    mat = floyd_warshall_accelerated(dg_2_ma(d_mg))
+    for row in mat:
+        if np.inf not in row:
+            return True
+    return False
+
+
+def edge_number(d_mg):
+    &#34;&#34;&#34; Method to return the number of edges in a graph
+
+    Args:
+        d_mg: Graph to count the number of edges un
+
+    Returns:
+        count: int with the number of edges
+    &#34;&#34;&#34;
+    count = 0
+    for origin in d_mg.keys():
+        for target in d_mg[origin].keys():
+            for edge in d_mg[origin][target].keys():
+                count += 1
+    return count
+
+
+# SEQUENCING METHODS
+def random_sequence(len_seq, seq_chars=[&#34;A&#34;, &#34;C&#34;, &#34;G&#34;, &#34;T&#34;], sep=&#34;&#34;):
+    &#34;&#34;&#34; This method creates a random sequence of seq_chars with len len_seq
+
+    Args:
+        len_seq: the len of the sequence to generate
+        seq_cars: the chars to build the sequence with 
+        sep: the separation char to use
+
+    Returns:
+        sequence: array with the generated sequence    
+    &#34;&#34;&#34;
+    return sep.join(np.random.choice(seq_chars, size=len_seq))
+
+
+def spectrum(sequence, len_read=3, seed=None):
+    &#34;&#34;&#34; Method to return an unordered spectrum of len_read lectures
+
+    Args:
+        sequence: sequence to use
+        len_read: length of the sequences in the spectrum
+        seed: to allow controlled execution and testing
+
+    Returns:
+        spectrum: randomly shuffled spectrum
+    &#34;&#34;&#34;
+    np.random.seed(seed)
+    spectrum = []
+
+    for l in range(len(sequence)):
+        if len(sequence[l:len_read+l]) == len_read:
+            spectrum.append(sequence[l:len_read+l])
+
+    np.random.shuffle(spectrum)
+
+    return spectrum
+
+
+def spectrum_2(spectr):
+    &#34;&#34;&#34; This method receives an spectrum and returns the l-1 associated spectrum
+
+    Args:
+        spectr: spectrum to reduce
+
+    Returns:
+        spectrum2: reduced spectrum
+    &#34;&#34;&#34;
+    spectrum2 = []
+    len_read = len(spectr[0]) - 1
+
+    for l in range(len(spectr)):
+        if spectr[l][:len_read] not in spectrum2:
+            spectrum2.append(spectr[l][:len_read])
+
+        if spectr[l][1:len_read+1] not in spectrum2:
+            spectrum2.append(spectr[l][1:len_read+1])
+
+    return spectrum2
+
+
+def spectrum_2_graph(spectr):
+    &#34;&#34;&#34; Transforms the given L spectrum to a graph in the multidict format
+
+    Args:
+        spectr: the spectrum to transform
+
+    Returns:
+        graph: a graph in the multidict format with the equivalent graph
+    &#34;&#34;&#34;
+    # Declare the variables we will be using
+    graph = dict()
+    spectr2 = spectrum_2(spectr)
+    len_read = len(spectr[0]) - 1
+
+    # We add all the known nodes
+    for seq_index, seq_l in enumerate(spectr2):
+        graph[seq_index] = dict()
+
+    # Now we add all the edges per node
+    # Looping through all the seq_prev_l elements
+    for ori_idx, seq_prev_l in enumerate(spectr2):
+        # Loop through all the seq_l elements
+        for seq_l in spectr:
+            beggining = seq_l[:-1]
+            end_idx = spectr2.index(seq_l[1:])
+            # If beggining matches, add edge to ending part
+            if beggining == seq_prev_l:
+                # Add the target dict if not existing
+                if graph[ori_idx].get(end_idx) is None:
+                    graph[ori_idx][end_idx] = dict()
+                # Add the edge with weight 1
+                graph[ori_idx][end_idx][len(graph[ori_idx][end_idx])] = 1
+    return graph
+
+
+def spectrum_2_sequence(spectr):
+    &#34;&#34;&#34; This method receives a spectrum and returns a possible initial sequence
+
+    Args: 
+        spectr: spectrum to get the sequence from
+
+    Returns:
+        sequence: possible sequence with the solution
+    &#34;&#34;&#34;
+    return path_2_sequence(euler_path(spectrum_2_graph(spectr)), spectrum_2(spectr))
+
+
+def path_2_sequence(l_path, spectrum_2):
+    &#34;&#34;&#34; This method transforms a list path to a sequence, given the L-1 spectrum
+
+    Args:
+        l_path: the final euler path we got
+        spectrum_2: the l-1 spectrum
+
+    Returns:
+        seq: a possible initial sequence
+    &#34;&#34;&#34;
+    sequence = spectrum_2[l_path[0]]
+
+    for i in l_path[1:]:
+        sequence += spectrum_2[i][-1]
+
+    return sequence
+
+
+def check_sequencing(len_seq, len_read=3):
+    &#34;&#34;&#34; Method to check the sequencing methods we implemented before
+
+    Args:
+        len_seq: the length of the sequence to generate
+        len_read: length of the spectrum elements (default 3, as ADN)
+
+    Returns:
+        boolean: True if it worked as expected, False if not
+    &#34;&#34;&#34;
+    # Generate random sequence of len_seq
+    sequence = random_sequence(len_seq)
+    # Generate a spectrum with len_read
+    spectr = spectrum(sequence, len_read)
+    # Get a possible sequence from the spectrum
+    sequence2 = spectrum_2_sequence(spectr)
+
+    # Properly check if its a coherent result. What we thought was to
+    # get the spectrum of both and check if they have the same elements
+    reconstructed_spectrum = spectrum(sequence2, len_read)
+    if sorted(list(spectr)) == sorted(list(reconstructed_spectrum)):
+        return True
+    # We should get here, as it should all work properly
+    return False</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="euler13.TGF_2_d_g"><code class="name flex">
+<span>def <span class="ident">TGF_2_d_g</span></span>(<span>f_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads the information of a TGF file of .graphs folder into a multigraph</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>f_name</code></strong></dt>
+<dd>name of the file to load on folder .graphs (without ".tgf")</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>d_g</code></dt>
+<dd>multigraph of the given TGF file, None if doesnt exist</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def TGF_2_d_g(f_name):
+    &#34;&#34;&#34; Loads the information of a TGF file of .graphs folder into a multigraph
+
+    Args:
+        f_name: name of the file to load on folder .graphs (without &#34;.tgf&#34;)
+
+    Returns:
+        d_g: multigraph of the given TGF file, None if doesnt exist
+    &#34;&#34;&#34;
+    # Check if multigraph file exists
+    if os.path.exists(&#34;./.graphs/&#34; + f_name + &#34;.tgf&#34;) is False:
+        print(&#34;The given multigraph doesn&#39;t exist in the .graph directory&#34;)
+        return None
+
+    # We create the dictionary and open the file
+    f = open(&#34;./.graphs/{}.tgf&#34;.format(f_name), &#34;r&#34;)
+    d_g = dict()
+
+    # We add all the nodes to it, till #
+    for line in f:
+        if &#34;#&#34; in line:
+            break
+        node = int(line.strip(&#34;\n&#34;))
+        d_g[node] = dict()
+
+    # We now add all the edges
+    for line in f:
+        origin, target, weight = list(map(int, line.strip(&#34;\n&#34;).split(&#34; &#34;)))
+        if d_g[origin].get(target) is None:
+            d_g[origin][target] = dict()
+        d_g[origin][target][len(d_g[origin][target])] = weight
+
+    # We now close and return the file
+    f.close()
+    return d_g</code></pre>
+</details>
+</dd>
+<dt id="euler13.adj_inc_directed_multigraph"><code class="name flex">
+<span>def <span class="ident">adj_inc_directed_multigraph</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obtains the adjacency and incidence lists from a directed multigraph</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>adj</code></dt>
+<dd>adjacency list</dd>
+<dt><code>inc</code></dt>
+<dd>incidence list</dd>
+<dt><code>NOTE</code></dt>
+<dd>the lists returned are in the form of NP arrays</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def adj_inc_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Obtains the adjacency and incidence lists from a directed multigraph
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        adj: adjacency list
+        inc: incidence list
+        NOTE: the lists returned are in the form of NP arrays
+    &#34;&#34;&#34;
+    # We create the 2 arrays we will be using
+    adj, inc = np.zeros(shape=len(d_mg), dtype=&#34;int16&#34;), np.zeros(
+        shape=len(d_mg), dtype=&#34;int16&#34;)
+
+    # We loop and add all of the adjacencies and incidences
+    for origin in d_mg.keys():
+        for target in d_mg[origin].keys():
+            for _ in d_mg[origin][target].keys():
+                adj[origin] += 1
+                inc[target] += 1
+
+    # And finally return the arrays
+    return adj, inc</code></pre>
+</details>
+</dd>
+<dt id="euler13.check_sequencing"><code class="name flex">
+<span>def <span class="ident">check_sequencing</span></span>(<span>len_seq, len_read=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to check the sequencing methods we implemented before</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>len_seq</code></strong></dt>
+<dd>the length of the sequence to generate</dd>
+<dt><strong><code>len_read</code></strong></dt>
+<dd>length of the spectrum elements (default 3, as ADN)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>boolean</code></dt>
+<dd>True if it worked as expected, False if not</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_sequencing(len_seq, len_read=3):
+    &#34;&#34;&#34; Method to check the sequencing methods we implemented before
+
+    Args:
+        len_seq: the length of the sequence to generate
+        len_read: length of the spectrum elements (default 3, as ADN)
+
+    Returns:
+        boolean: True if it worked as expected, False if not
+    &#34;&#34;&#34;
+    # Generate random sequence of len_seq
+    sequence = random_sequence(len_seq)
+    # Generate a spectrum with len_read
+    spectr = spectrum(sequence, len_read)
+    # Get a possible sequence from the spectrum
+    sequence2 = spectrum_2_sequence(spectr)
+
+    # Properly check if its a coherent result. What we thought was to
+    # get the spectrum of both and check if they have the same elements
+    reconstructed_spectrum = spectrum(sequence2, len_read)
+    if sorted(list(spectr)) == sorted(list(reconstructed_spectrum)):
+        return True
+    # We should get here, as it should all work properly
+    return False</code></pre>
+</details>
+</dd>
+<dt id="euler13.d_g_2_TGF"><code class="name flex">
+<span>def <span class="ident">d_g_2_TGF</span></span>(<span>d_g, f_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Stores the given d_g multigraph in a file with name f_name in the
+directory ".graphs" with extension ".tgf", in TGF format</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_g</code></strong></dt>
+<dd>multigraph to store</dd>
+<dt><strong><code>f_name</code></strong></dt>
+<dd>filename for the graph to be stored</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>path</code></dt>
+<dd>global path to generated file</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def d_g_2_TGF(d_g, f_name):
+    &#34;&#34;&#34; Stores the given d_g multigraph in a file with name f_name in the
+        directory &#34;.graphs&#34; with extension &#34;.tgf&#34;, in TGF format
+
+    Args:
+        d_g: multigraph to store
+        f_name: filename for the graph to be stored
+
+    Returns:
+        path: global path to generated file
+    &#34;&#34;&#34;
+    # Create the directory
+    try:
+        os.mkdir(&#34;./.graphs&#34;)
+    except:
+        # Unless it already exists
+        pass
+    # Open the new file, deleting if already existing
+    f = open(&#34;./.graphs/{}.tgf&#34;.format(f_name), &#34;w&#34;)
+    # Append all the nodes
+    f.writelines(&#34;{}\n&#34;.format(node) for node in d_g.keys())
+    # Put the separator between nodes and edges
+    f.write(&#34;#&#34; * 80 + &#34;\n&#34;)  # We use a whole so its visually visible
+    # We now add all the edges
+    for origin in d_g.keys():
+        for target in d_g[origin].keys():
+            for weight in d_g[origin][target].values():
+                f.write(&#34;{} {} {}\n&#34;.format(origin, target, weight))
+    f.close()
+    return os.path.abspath(&#34;./.graphs/&#34; + f_name + &#34;.tgf&#34;)</code></pre>
+</details>
+</dd>
+<dt id="euler13.edge_number"><code class="name flex">
+<span>def <span class="ident">edge_number</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return the number of edges in a graph</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>Graph to count the number of edges un</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>count</code></dt>
+<dd>int with the number of edges</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def edge_number(d_mg):
+    &#34;&#34;&#34; Method to return the number of edges in a graph
+
+    Args:
+        d_mg: Graph to count the number of edges un
+
+    Returns:
+        count: int with the number of edges
+    &#34;&#34;&#34;
+    count = 0
+    for origin in d_mg.keys():
+        for target in d_mg[origin].keys():
+            for edge in d_mg[origin][target].keys():
+                count += 1
+    return count</code></pre>
+</details>
+</dd>
+<dt id="euler13.euler_circuit_directed_multigraph"><code class="name flex">
+<span>def <span class="ident">euler_circuit_directed_multigraph</span></span>(<span>d_mg, u=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obtains an eulerian circuit</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+<dt><strong><code>u</code></strong></dt>
+<dd>first node</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>path1</code></dt>
+<dd>eulerian circuit</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def euler_circuit_directed_multigraph(d_mg, u=0):
+    &#34;&#34;&#34; Obtains an eulerian circuit
+
+    Args:
+        d_mg: directed multigraph
+        u: first node
+
+    Returns:
+        path1: eulerian circuit
+    &#34;&#34;&#34;
+    d_mgCopy = copy.deepcopy(d_mg)
+
+    if isthere_euler_circuit_directed_multigraph(d_mgCopy) == True:
+
+        path1 = euler_walk_directed_multigraph(u, d_mgCopy)
+        u = next_first_node(path1, d_mgCopy)
+
+        while u != None:
+            path2 = euler_walk_directed_multigraph(u, d_mgCopy)
+            path1 = path_stitch(path1, path2)
+            u = next_first_node(path1, d_mgCopy)
+
+        return path1</code></pre>
+</details>
+</dd>
+<dt id="euler13.euler_path"><code class="name flex">
+<span>def <span class="ident">euler_path</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obtains an Eulerian Path with a list method, instead of recomended method
+with submethods and using the graph structure.</p>
+<h2 id="args">Args</h2>
+<p>d_mg_ the directed multigraph to find the euler path from</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>path</code></dt>
+<dd>an ordered list with the visited nodes, None if not euler path</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def euler_path(d_mg):
+    &#34;&#34;&#34; Obtains an Eulerian Path with a list method, instead of recomended method
+        with submethods and using the graph structure.
+
+    Args:
+        d_mg_ the directed multigraph to find the euler path from
+
+    Returns:
+        path: an ordered list with the visited nodes, None if not euler path
+    &#34;&#34;&#34;
+    # We check if there is a possible euler path
+    if isthere_euler_path_directed_multigraph is False:
+        return None
+    # We first fetch the starting and ending nodes
+    first, end = first_last_euler_path_directed_multigraph(d_mg)
+    if first is None or end is None:
+        return None
+
+    # We create a list with edges to avoid deepcoping and to have a
+    # confortable way to loop through edges
+    edges = []
+    for origin in d_mg.keys():
+        edges.append([])
+        for target in d_mg[origin].keys():
+            for edge in d_mg[origin][target].keys():
+                edges[origin].append(target)
+
+    # Current node update and loop till we reach end node
+    current_node = first
+    path = [first]
+    while current_node != end:
+        # We check if we have reached a dead end. If so, there is no euler path
+        # (this should never happen, but if so, it means there are 2 end nodes)
+        if edges[current_node] == []:
+            print(&#34;A big error ocurred, this shouldn&#39;t happen.&#34;)
+            return None
+        # We update the current node with its first edge and add it to the path
+        current_node = edges[current_node].pop(0)
+        path.append(current_node)
+
+    # Now, if all went properly, we have our main path in path. (euler_walk)
+    # If there are no edges left, we have our euler path
+    # Else, we still may have some loops inside our path
+    while any(edges):
+        # Get the node we will be checking for inner loops (next_first_node)
+        for node in set(path):
+            if edges[node] != []:
+                current_node = edges[node].pop(0)
+                break
+        # We travel through the whole loop
+        loop_path = [current_node]
+        while current_node != node:  # (euler_walk)
+            # We check if we have reached a dead-end
+            if edges[current_node] == []:
+                return None
+            # We update the current node with its first known edge and add it to the loop_path
+            current_node = edges[current_node].pop(0)
+            loop_path.append(current_node)
+        # We then add all its new elements at the beggining of the looping node
+        insertion_index = path.index(node)
+        for node in loop_path:  # (path_stitch)
+            insertion_index += 1
+            path.insert(insertion_index, node)
+
+    return path</code></pre>
+</details>
+</dd>
+<dt id="euler13.euler_path_directed_multigraph"><code class="name flex">
+<span>def <span class="ident">euler_path_directed_multigraph</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obtains the Eulerian path</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>path1</code></dt>
+<dd>eulerian path</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def euler_path_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Obtains the Eulerian path
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        path1: eulerian path
+    &#34;&#34;&#34;
+    if isthere_euler_path_directed_multigraph(d_mg) is False:
+        return None
+
+    d_mgCopy = copy.deepcopy(d_mg)
+
+    u, _ = first_last_euler_path_directed_multigraph(d_mgCopy)
+
+    path1 = euler_walk_directed_multigraph(u, d_mgCopy)
+    u = next_first_node(path1, d_mgCopy)
+
+    while u != None:
+        path2 = euler_walk_directed_multigraph(u, d_mgCopy)
+        path1 = path_stitch(path1, path2)
+        u = next_first_node(path1, d_mgCopy)
+
+    return path1</code></pre>
+</details>
+</dd>
+<dt id="euler13.euler_walk_directed_multigraph"><code class="name flex">
+<span>def <span class="ident">euler_walk_directed_multigraph</span></span>(<span>u, d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Euler walk from the starting point U</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>u</code></strong></dt>
+<dd>starting point for the walk</dd>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>path</code></dt>
+<dd>possible eulerian path as list, [] if there is no path</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def euler_walk_directed_multigraph(u, d_mg):
+    &#34;&#34;&#34; Euler walk from the starting point U
+
+    Args:
+        u: starting point for the walk
+        d_mg: directed multigraph
+
+    Returns:
+        path: possible eulerian path as list, [] if there is no path
+    &#34;&#34;&#34;
+
+    path = []
+
+    if u in d_mg.keys():
+        path.append(u)
+        while u in d_mg.keys() and len(d_mg[u]) != 0:
+            for t in d_mg[u].keys():
+                for o in d_mg[u][t].keys():
+                    path.append(t)
+                    if len(d_mg[u][t]) != 1:
+                        d_mg[u][t].pop(o)
+
+                    else:
+                        d_mg[u].pop(t)
+                    break
+                break
+            u = t
+
+    return path</code></pre>
+</details>
+</dd>
+<dt id="euler13.first_last_euler_path_directed_multigraph"><code class="name flex">
+<span>def <span class="ident">first_last_euler_path_directed_multigraph</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obtains the first and last node for an euler path.</p>
+<p>Two zeros are returned in case of an eulerian circuit</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>firtsLast</code></dt>
+<dd>tuple with the first and last node, None if there is not a path</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def first_last_euler_path_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Obtains the first and last node for an euler path.
+
+    Two zeros are returned in case of an eulerian circuit
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        firtsLast: tuple with the first and last node, None if there is not a path
+    &#34;&#34;&#34;
+    firtsLast = (None, None)
+    # Check if there is a path
+    if isthere_euler_path_directed_multigraph(d_mg):
+        adj, inc = adj_inc_directed_multigraph(d_mg)
+        # We get where the first and last nodes by adjacency and incidence
+        # If there are all 0, the return is 0, so there is a loop
+        first = np.argmax((adj - inc) &gt; 0)
+        last = np.argmax((inc - adj) &gt; 0)
+        firtsLast = (first, last)
+    return tuple(firtsLast)</code></pre>
+</details>
+</dd>
+<dt id="euler13.graph_is_fully_connected"><code class="name flex">
+<span>def <span class="ident">graph_is_fully_connected</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Using the accelerated Floyd Warshall Method, check if the graph
+is fully connected and there is somehow a path to all the other
+nodes present on the graph.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>the graph to check connection in</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>if the graph is fully connected or not</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def graph_is_fully_connected(d_mg):
+    &#34;&#34;&#34; Using the accelerated Floyd Warshall Method, check if the graph
+        is fully connected and there is somehow a path to all the other
+        nodes present on the graph.
+
+    Args:
+        d_mg: the graph to check connection in
+
+    Returns:
+        bool: if the graph is fully connected or not
+    &#34;&#34;&#34;
+    mat = floyd_warshall_accelerated(dg_2_ma(d_mg))
+    for row in mat:
+        if np.inf not in row:
+            return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="euler13.isthere_euler_circuit_directed_multigraph"><code class="name flex">
+<span>def <span class="ident">isthere_euler_circuit_directed_multigraph</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Decide if the directed multigraph has an euler circuit</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>True</code></dt>
+<dd>if it has an euler circuit</dd>
+<dt><code>False</code></dt>
+<dd>if it has not an euler circuit</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isthere_euler_circuit_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Decide if the directed multigraph has an euler circuit
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        True: if it has an euler circuit
+        False: if it has not an euler circuit
+    &#34;&#34;&#34;
+    adj, inc = adj_inc_directed_multigraph(d_mg)
+    return np.equal(adj, inc).all() and graph_is_fully_connected(d_mg)</code></pre>
+</details>
+</dd>
+<dt id="euler13.isthere_euler_path_directed_multigraph"><code class="name flex">
+<span>def <span class="ident">isthere_euler_path_directed_multigraph</span></span>(<span>d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check if the directed multigraph has an euler path</p>
+<p>By Wikipedia:
+"A directed graph has an Eulerian trail if and only if at most one vertex has
+(out-degree) − (in-degree) = 1, at most one vertex has (in-degree) − (out-degree) = 1,
+every other vertex has equal in-degree and out-degree, and all of its vertices with
+nonzero degree belong to a single connected component of the underlying undirected graph."</p>
+<p>We will then check the out-degrees and in-degrees and then check with an implementation of
+DFS if all of them belong to the same connected path</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>True</code></dt>
+<dd>if it has an euler path</dd>
+<dt><code>False</code></dt>
+<dd>if it has not an euler path</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isthere_euler_path_directed_multigraph(d_mg):
+    &#34;&#34;&#34; Check if the directed multigraph has an euler path
+
+    By Wikipedia:
+        &#34;A directed graph has an Eulerian trail if and only if at most one vertex has 
+        (out-degree) − (in-degree) = 1, at most one vertex has (in-degree) − (out-degree) = 1, 
+        every other vertex has equal in-degree and out-degree, and all of its vertices with 
+        nonzero degree belong to a single connected component of the underlying undirected graph.&#34;
+
+    We will then check the out-degrees and in-degrees and then check with an implementation of
+    DFS if all of them belong to the same connected path
+
+    Args:
+        d_mg: directed multigraph
+
+    Returns:
+        True: if it has an euler path
+        False: if it has not an euler path
+    &#34;&#34;&#34;
+    # We first get the adjacency and incidence as numpy arrays
+    adj, inc = adj_inc_directed_multigraph(d_mg)
+
+    # (out-degree) − (in-degree) = 1 in only one vertex
+    out_minus_in = adj - inc
+    # (out-degree) − (in-degree) = 1 in only one vertex
+    in_minus_out = inc - adj
+
+    # We check if there are non-zero or non-one values inside the arrays
+    if True in (np.isin(out_minus_in, [-1, 0, 1], invert=True) +
+                np.isin(in_minus_out, [-1, 0, 1], invert=True)):
+        return False
+
+    # We get the two conditions based on adjacency and incidence
+    cond_1 = len(out_minus_in[out_minus_in == 1])
+    cond_2 = len(in_minus_out[in_minus_out == 1])
+
+    # If the adjacency and incidence are OK
+    if cond_1 &lt; 2 and cond_2 &lt; 2:
+        # If there is a node from which we can access all the other nodes,
+        # its all connected. Easiest way to get this with the methods we
+        # have right now is by using Floyd Warshall Accelerated
+        if graph_is_fully_connected(d_mg):
+            return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="euler13.next_first_node"><code class="name flex">
+<span>def <span class="ident">next_first_node</span></span>(<span>l_path, d_mg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Obtains the following node from which the walk must be restarted</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>l_path</code></strong></dt>
+<dd>path's list</dd>
+<dt><strong><code>d_mg</code></strong></dt>
+<dd>directed multigraph</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>inode</code></dt>
+<dd>initial node</dd>
+<dt><code>None</code></dt>
+<dd>when there are not more nodes</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def next_first_node(l_path, d_mg):
+    &#34;&#34;&#34; Obtains the following node from which the walk must be restarted
+
+    Args:
+        l_path: path&#39;s list
+        d_mg: directed multigraph
+
+    Returns:
+        inode: initial node
+        None: when there are not more nodes
+    &#34;&#34;&#34;
+    adj, inc = adj_inc_directed_multigraph(d_mg)
+
+    aux = adj + inc
+
+    for inode in range(len(aux)):
+        if inode in l_path and aux[inode] % 2 == 0 and aux[inode] != 0:
+            return inode
+
+    return None</code></pre>
+</details>
+</dd>
+<dt id="euler13.path_2_sequence"><code class="name flex">
+<span>def <span class="ident">path_2_sequence</span></span>(<span>l_path, spectrum_2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method transforms a list path to a sequence, given the L-1 spectrum</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>l_path</code></strong></dt>
+<dd>the final euler path we got</dd>
+<dt><strong><code>spectrum_2</code></strong></dt>
+<dd>the l-1 spectrum</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>seq</code></dt>
+<dd>a possible initial sequence</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def path_2_sequence(l_path, spectrum_2):
+    &#34;&#34;&#34; This method transforms a list path to a sequence, given the L-1 spectrum
+
+    Args:
+        l_path: the final euler path we got
+        spectrum_2: the l-1 spectrum
+
+    Returns:
+        seq: a possible initial sequence
+    &#34;&#34;&#34;
+    sequence = spectrum_2[l_path[0]]
+
+    for i in l_path[1:]:
+        sequence += spectrum_2[i][-1]
+
+    return sequence</code></pre>
+</details>
+</dd>
+<dt id="euler13.path_stitch"><code class="name flex">
+<span>def <span class="ident">path_stitch</span></span>(<span>path_1, path_2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Unify two different paths</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path_1</code></strong></dt>
+<dd>first path</dd>
+<dt><strong><code>path_2</code></strong></dt>
+<dd>second path</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>path</code></dt>
+<dd>the resultant path</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def path_stitch(path_1, path_2):
+    &#34;&#34;&#34; Unify two different paths
+
+    Args:
+        path_1: first path
+        path_2: second path
+
+    Returns:
+        path: the resultant path
+    &#34;&#34;&#34;
+    path_1 = np.array(path_1)
+    path_2 = np.array(path_2)
+
+    for i in range(len(path_1)):
+        if path_1[i] == path_2[0]:
+            path_1 = np.delete(path_1, i)
+            path = np.insert(path_1, i, path_2)
+            return path.tolist()</code></pre>
+</details>
+</dd>
+<dt id="euler13.random_sequence"><code class="name flex">
+<span>def <span class="ident">random_sequence</span></span>(<span>len_seq, seq_chars=['A', 'C', 'G', 'T'], sep='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method creates a random sequence of seq_chars with len len_seq</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>len_seq</code></strong></dt>
+<dd>the len of the sequence to generate</dd>
+<dt><strong><code>seq_cars</code></strong></dt>
+<dd>the chars to build the sequence with </dd>
+<dt><strong><code>sep</code></strong></dt>
+<dd>the separation char to use</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>sequence</code></dt>
+<dd>array with the generated sequence</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_sequence(len_seq, seq_chars=[&#34;A&#34;, &#34;C&#34;, &#34;G&#34;, &#34;T&#34;], sep=&#34;&#34;):
+    &#34;&#34;&#34; This method creates a random sequence of seq_chars with len len_seq
+
+    Args:
+        len_seq: the len of the sequence to generate
+        seq_cars: the chars to build the sequence with 
+        sep: the separation char to use
+
+    Returns:
+        sequence: array with the generated sequence    
+    &#34;&#34;&#34;
+    return sep.join(np.random.choice(seq_chars, size=len_seq))</code></pre>
+</details>
+</dd>
+<dt id="euler13.spectrum"><code class="name flex">
+<span>def <span class="ident">spectrum</span></span>(<span>sequence, len_read=3, seed=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return an unordered spectrum of len_read lectures</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sequence</code></strong></dt>
+<dd>sequence to use</dd>
+<dt><strong><code>len_read</code></strong></dt>
+<dd>length of the sequences in the spectrum</dd>
+<dt><strong><code>seed</code></strong></dt>
+<dd>to allow controlled execution and testing</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="euler13.spectrum" href="#euler13.spectrum">spectrum()</a></code></dt>
+<dd>randomly shuffled spectrum</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spectrum(sequence, len_read=3, seed=None):
+    &#34;&#34;&#34; Method to return an unordered spectrum of len_read lectures
+
+    Args:
+        sequence: sequence to use
+        len_read: length of the sequences in the spectrum
+        seed: to allow controlled execution and testing
+
+    Returns:
+        spectrum: randomly shuffled spectrum
+    &#34;&#34;&#34;
+    np.random.seed(seed)
+    spectrum = []
+
+    for l in range(len(sequence)):
+        if len(sequence[l:len_read+l]) == len_read:
+            spectrum.append(sequence[l:len_read+l])
+
+    np.random.shuffle(spectrum)
+
+    return spectrum</code></pre>
+</details>
+</dd>
+<dt id="euler13.spectrum_2"><code class="name flex">
+<span>def <span class="ident">spectrum_2</span></span>(<span>spectr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method receives an spectrum and returns the l-1 associated spectrum</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>spectr</code></strong></dt>
+<dd>spectrum to reduce</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>spectrum2</code></dt>
+<dd>reduced spectrum</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spectrum_2(spectr):
+    &#34;&#34;&#34; This method receives an spectrum and returns the l-1 associated spectrum
+
+    Args:
+        spectr: spectrum to reduce
+
+    Returns:
+        spectrum2: reduced spectrum
+    &#34;&#34;&#34;
+    spectrum2 = []
+    len_read = len(spectr[0]) - 1
+
+    for l in range(len(spectr)):
+        if spectr[l][:len_read] not in spectrum2:
+            spectrum2.append(spectr[l][:len_read])
+
+        if spectr[l][1:len_read+1] not in spectrum2:
+            spectrum2.append(spectr[l][1:len_read+1])
+
+    return spectrum2</code></pre>
+</details>
+</dd>
+<dt id="euler13.spectrum_2_graph"><code class="name flex">
+<span>def <span class="ident">spectrum_2_graph</span></span>(<span>spectr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Transforms the given L spectrum to a graph in the multidict format</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>spectr</code></strong></dt>
+<dd>the spectrum to transform</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>graph</code></dt>
+<dd>a graph in the multidict format with the equivalent graph</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spectrum_2_graph(spectr):
+    &#34;&#34;&#34; Transforms the given L spectrum to a graph in the multidict format
+
+    Args:
+        spectr: the spectrum to transform
+
+    Returns:
+        graph: a graph in the multidict format with the equivalent graph
+    &#34;&#34;&#34;
+    # Declare the variables we will be using
+    graph = dict()
+    spectr2 = spectrum_2(spectr)
+    len_read = len(spectr[0]) - 1
+
+    # We add all the known nodes
+    for seq_index, seq_l in enumerate(spectr2):
+        graph[seq_index] = dict()
+
+    # Now we add all the edges per node
+    # Looping through all the seq_prev_l elements
+    for ori_idx, seq_prev_l in enumerate(spectr2):
+        # Loop through all the seq_l elements
+        for seq_l in spectr:
+            beggining = seq_l[:-1]
+            end_idx = spectr2.index(seq_l[1:])
+            # If beggining matches, add edge to ending part
+            if beggining == seq_prev_l:
+                # Add the target dict if not existing
+                if graph[ori_idx].get(end_idx) is None:
+                    graph[ori_idx][end_idx] = dict()
+                # Add the edge with weight 1
+                graph[ori_idx][end_idx][len(graph[ori_idx][end_idx])] = 1
+    return graph</code></pre>
+</details>
+</dd>
+<dt id="euler13.spectrum_2_sequence"><code class="name flex">
+<span>def <span class="ident">spectrum_2_sequence</span></span>(<span>spectr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method receives a spectrum and returns a possible initial sequence</p>
+<p>Args:
+spectr: spectrum to get the sequence from</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>sequence</code></dt>
+<dd>possible sequence with the solution</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spectrum_2_sequence(spectr):
+    &#34;&#34;&#34; This method receives a spectrum and returns a possible initial sequence
+
+    Args: 
+        spectr: spectrum to get the sequence from
+
+    Returns:
+        sequence: possible sequence with the solution
+    &#34;&#34;&#34;
+    return path_2_sequence(euler_path(spectrum_2_graph(spectr)), spectrum_2(spectr))</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="euler13.TGF_2_d_g" href="#euler13.TGF_2_d_g">TGF_2_d_g</a></code></li>
+<li><code><a title="euler13.adj_inc_directed_multigraph" href="#euler13.adj_inc_directed_multigraph">adj_inc_directed_multigraph</a></code></li>
+<li><code><a title="euler13.check_sequencing" href="#euler13.check_sequencing">check_sequencing</a></code></li>
+<li><code><a title="euler13.d_g_2_TGF" href="#euler13.d_g_2_TGF">d_g_2_TGF</a></code></li>
+<li><code><a title="euler13.edge_number" href="#euler13.edge_number">edge_number</a></code></li>
+<li><code><a title="euler13.euler_circuit_directed_multigraph" href="#euler13.euler_circuit_directed_multigraph">euler_circuit_directed_multigraph</a></code></li>
+<li><code><a title="euler13.euler_path" href="#euler13.euler_path">euler_path</a></code></li>
+<li><code><a title="euler13.euler_path_directed_multigraph" href="#euler13.euler_path_directed_multigraph">euler_path_directed_multigraph</a></code></li>
+<li><code><a title="euler13.euler_walk_directed_multigraph" href="#euler13.euler_walk_directed_multigraph">euler_walk_directed_multigraph</a></code></li>
+<li><code><a title="euler13.first_last_euler_path_directed_multigraph" href="#euler13.first_last_euler_path_directed_multigraph">first_last_euler_path_directed_multigraph</a></code></li>
+<li><code><a title="euler13.graph_is_fully_connected" href="#euler13.graph_is_fully_connected">graph_is_fully_connected</a></code></li>
+<li><code><a title="euler13.isthere_euler_circuit_directed_multigraph" href="#euler13.isthere_euler_circuit_directed_multigraph">isthere_euler_circuit_directed_multigraph</a></code></li>
+<li><code><a title="euler13.isthere_euler_path_directed_multigraph" href="#euler13.isthere_euler_path_directed_multigraph">isthere_euler_path_directed_multigraph</a></code></li>
+<li><code><a title="euler13.next_first_node" href="#euler13.next_first_node">next_first_node</a></code></li>
+<li><code><a title="euler13.path_2_sequence" href="#euler13.path_2_sequence">path_2_sequence</a></code></li>
+<li><code><a title="euler13.path_stitch" href="#euler13.path_stitch">path_stitch</a></code></li>
+<li><code><a title="euler13.random_sequence" href="#euler13.random_sequence">random_sequence</a></code></li>
+<li><code><a title="euler13.spectrum" href="#euler13.spectrum">spectrum</a></code></li>
+<li><code><a title="euler13.spectrum_2" href="#euler13.spectrum_2">spectrum_2</a></code></li>
+<li><code><a title="euler13.spectrum_2_graph" href="#euler13.spectrum_2_graph">spectrum_2_graph</a></code></li>
+<li><code><a title="euler13.spectrum_2_sequence" href="#euler13.spectrum_2_sequence">spectrum_2_sequence</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+</footer>
+</body>
+</html>
